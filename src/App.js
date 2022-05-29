@@ -16,7 +16,7 @@ const App = () => {
     const data = await res.data
     const dataArray = data.Search
     dataArray.map((title) => {
-      console.log(title)
+      setMovies(movies.push(title))
     })
   }
 
@@ -27,6 +27,7 @@ const App = () => {
   return (
     <div className="App">
      <h1>App</h1>
+     {console.log(movies)}
     </div>
   );
 }
