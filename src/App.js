@@ -1,7 +1,9 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.css'
 import axios from 'axios'
+import SearchForm from './SearchForm';
 import MovieCard from './MovieCard'
 
 const App = () => {
@@ -24,6 +26,7 @@ const App = () => {
 
   return (
     <div className="App">
+      <SearchForm />
       <div className="container">
       {movies.length > 0 ?
       (movies.map(movie => (
