@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import './App.css';
 import axios from 'axios'
-import { set } from 'express/lib/application';
+import MovieCard from './MovieCard'
 
 const App = () => {
 
@@ -15,9 +15,7 @@ const App = () => {
     })
     const data = await res.data
     const dataArray = data.Search
-    dataArray.map((title) => {
-      setMovies(movies.push(title))
-    })
+    setMovies(dataArray)
   }
 
   useEffect(() => {
@@ -26,8 +24,14 @@ const App = () => {
 
   return (
     <div className="App">
-     <h1>App</h1>
-     {console.log(movies)}
+      <div className="container">
+      {movies.length > 0 ?
+      (movies.map(movie => (
+      <MovieCard key={movie.imdbID} movie={movie}></MovieCard>
+      ))) 
+        :
+     ("There are no movies.")}
+      </div>
     </div>
   );
 }
