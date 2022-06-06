@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css'
 import axios from 'axios'
+import NavBar from './NavBar'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import MovieCard from './MovieCard'
@@ -51,6 +52,7 @@ const App = () => {
 
   return (
     <div className="App">
+      <NavBar />
       <div className="input-form">
       <Form className="form">
 			<Form.Group className="mb-3">
