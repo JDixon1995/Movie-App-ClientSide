@@ -4,7 +4,6 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.css'
 import NavBar from './NavBar'
 import SearchPage from './SearchPage'
-import TypeList from './TypeList';
 
 
 
@@ -15,7 +14,6 @@ const App = () => {
       <NavBar />
       <Routes>
         <Route path="/" element={<SearchPage />} />
-        <Route path="/types" element={<TypeList />} />
       </Routes>
     </div>
   );
